@@ -227,8 +227,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.71, y: 2.46}
-    newSize: {x: 1.71, y: 2.46}
+    oldSize: {x: 1.72, y: 2.46}
+    newSize: {x: 1.72, y: 2.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -236,11 +236,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.85499996, y: 1.23}
-      - {x: -0.855, y: 0.009370685}
-      - {x: -0.5182581, y: 0.008534551}
-      - {x: -0.53499997, y: -1.23}
-      - {x: 0.525, y: -1.23}
-      - {x: 0.5341301, y: 0.007677436}
+      - {x: -0.855, y: 0.027632833}
+      - {x: -0.5182581, y: 0.026796699}
+      - {x: -0.51673746, y: -1.220869}
+      - {x: 0.5067067, y: -1.2208537}
+      - {x: 0.5158682, y: 0.01680851}
       - {x: 0.855, y: 0.016381383}
       - {x: 0.85499996, y: 1.23}
 --- !u!114 &1941372757
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b658b3b74d29b9792ffbbe6b21fd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 15
+  playerSpeed: 10
   jumpForce: 15
   wallsLayer:
     serializedVersion: 2
@@ -332,6 +332,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1014249308153136589, guid: f4eca7410fdce797c82c53cd3c9e509d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4eca7410fdce797c82c53cd3c9e509d, type: 3}
 --- !u!1001 &3887046448898445023
@@ -400,12 +405,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 133838f89228045a0be5dbf78f904eec,
+      objectReference: {fileID: 21300000, guid: a09fa34c4d00dad1f864d54b61d7bc79,
         type: 3}
     - target: {fileID: 3887046450302939532, guid: 922e2bfa384fbdee39f9b4625b90218a,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.71
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 3887046450302939532, guid: 922e2bfa384fbdee39f9b4625b90218a,
         type: 3}
@@ -442,6 +447,16 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 82fd3921cd561f561b9a3c4ab1501f97, type: 2}
+    - target: {fileID: 3887046450302939534, guid: 922e2bfa384fbdee39f9b4625b90218a,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887046450302939534, guid: 922e2bfa384fbdee39f9b4625b90218a,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3887046450302939535, guid: 922e2bfa384fbdee39f9b4625b90218a,
         type: 3}
       propertyPath: m_Name
