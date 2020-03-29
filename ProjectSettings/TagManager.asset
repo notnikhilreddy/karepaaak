@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - Weapon
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,9 @@ TagManager:
   - 
   - Background
   - Enemies
-  - Weapons
+  - EnemyWeapons
   - Player
+  - PlayerWeapon
   - Powerups
   - Bullets
   - Walls
@@ -36,8 +41,31 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2109886305
+    locked: 0
+  - name: Enemies
+    uniqueID: 3629094479
+    locked: 0
+  - name: EnemyWeapons
+    uniqueID: 3581282475
+    locked: 0
+  - name: Player
+    uniqueID: 4093032311
+    locked: 0
+  - name: PlayerWeapon
+    uniqueID: 786197147
+    locked: 0
+  - name: Powerups
+    uniqueID: 194718475
+    locked: 0
+  - name: Bullets
+    uniqueID: 1189111909
+    locked: 0
+  - name: Walls
+    uniqueID: 2675126759
     locked: 0
