@@ -22,10 +22,12 @@ public class PlayerController : MonoBehaviour
     void Update() {
         isGrounded = rb.IsTouchingLayers(wallsLayer);
         if((direction = Input.GetAxis("horizontal")) != 0) {
-            if(direction > 0)
-                transform.localScale = new Vector2(playerScale.x, playerScale.y);
-            else
-                transform.localScale = new Vector2(-playerScale.x, playerScale.y);
+
+            if(!Input.mousePresent) // CHANGE LATER
+                if(direction > 0)
+                    transform.localScale = playerScale;
+                else
+                    transform.localScale = new Vector2(-playerScale.x, playerScale.y);
 
             rb.velocity = new Vector2(playerSpeed * Input.GetAxis("horizontal"), rb.velocity.y);
             
