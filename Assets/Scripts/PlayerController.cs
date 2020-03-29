@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         isGrounded = rb.IsTouchingLayers(wallsLayer);
         if((direction = Input.GetAxis("horizontal")) != 0) {
 
@@ -30,14 +30,9 @@ public class PlayerController : MonoBehaviour
                     transform.localScale = new Vector2(-playerScale.x, playerScale.y);
 
             rb.velocity = new Vector2(playerSpeed * Input.GetAxis("horizontal"), rb.velocity.y);
-            
         }
         if(Input.GetAxis("vertical") > 0 && isGrounded) {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-    }
-
-    private void FixedUpdate() {
-        
     }
 }

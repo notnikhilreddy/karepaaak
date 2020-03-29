@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    public GameObject bulletObject;
+    public float bulletSpeed;
     private GameObject parentObject;
     Vector2 pointDirection;
     Vector2 parentInitScale;
@@ -14,15 +16,24 @@ public class WeaponController : MonoBehaviour
         parentInitScale = parentObject.transform.localScale;
     }
 
+    void Update() {
+        if(Input.GetMouseButtonDown(0)) {
+            Vector3 firePoint = transform.GetChild(0).position;
+            
+            GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
+            newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
+            newBullet.GetComponent<Rigidbody2D>().velocity = pointDirection * bulletSpeed;
+        }
+    }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Input.mousePresent) { //CHANGE LATER
-            pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
             pointDirection.Normalize();
             float angle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
-            
-            if(pointDirection.x >= 0) {
+
+            if(pointDirection.x >= 0f) {
                 transform.rotation = Quaternion.Euler(0f, 0f, angle);
                 parentObject.transform.localScale = parentInitScale;
             } else {
