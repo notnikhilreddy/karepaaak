@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour
     public GameObject bulletObject;
     public float bulletSpeed;
     private GameObject parentObject;
-    Vector3 pointDirection;
+    Vector2 pointDirection;
     Vector2 parentInitScale;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) {
             Vector3 firePoint = transform.GetChild(0).position;
             pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
-            pointDirection.Normalize();
+            pointDirection = pointDirection.normalized;
              
             GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
             newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
@@ -32,7 +32,8 @@ public class WeaponController : MonoBehaviour
     {
         if(Input.mousePresent) { //CHANGE LATER
             pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
-            pointDirection.Normalize();
+            pointDirection = pointDirection.normalized;
+
             float angle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
 
             if(pointDirection.x >= 0f) {

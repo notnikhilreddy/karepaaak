@@ -6,23 +6,12 @@ public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public string enemyType;
+    public bool Human, Moving, Attacking;
     public float[] movePoints = new float[2];
     private int speed;
 
-
-
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
     }
-    void OnTriggerEnter2D(Collider2D trig)
-    {
-
-    }
-
-
 }
-
-
