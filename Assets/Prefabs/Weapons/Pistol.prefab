@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d5bdc8c5efc5a7db51474b4e6dd866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponType: Gun
   bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
     type: 3}
   bulletSpeed: 40
+  damage: 0

@@ -6,7 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     public string weaponType;
     public GameObject bulletObject;
-    public float bulletSpeed;
+    public float bulletSpeed, damage;
     private GameObject parentObject;
     private string weaponOwner;
     Vector2 pointDirection;
@@ -18,19 +18,28 @@ public class WeaponController : MonoBehaviour
         parentInitScale = parentObject.transform.localScale;
 
         weaponOwner = parentObject.tag;
+
+        if(weaponOwner.Equals("Player"))
     }
 
     void Update() {
-        if(weaponOwner.Equals("Player"))
+        if(weaponOwner.Equals("Player")) {
             if(Input.GetMouseButtonDown(0)) {
-                Vector3 firePoint = transform.GetChild(0).position;
-                pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
-                pointDirection = pointDirection.normalized;
-                
-                GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
-                newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
-                newBullet.GetComponent<Rigidbody2D>().velocity = pointDirection * bulletSpeed;
+                if(weaponType.Equals("Gun")) {
+                    Vector3 firePoint = transform.GetChild(0).position;
+                    pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
+                    pointDirection = pointDirection.normalized;
+                    
+                    GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
+                    newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
+                    newBullet.GetComponent<Rigidbody2D>().velocity = pointDirection * bulletSpeed;
+                } else {
+                    // MELEE WEAPON ATTACK CODE HERE
+                }
             }
+        } else {
+            // ENEMY WEAPON CODE HERE
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
