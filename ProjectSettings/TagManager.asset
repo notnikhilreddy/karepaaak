@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Turn
-  - Police
   - Wall
   - Weapon
   - Bullet
