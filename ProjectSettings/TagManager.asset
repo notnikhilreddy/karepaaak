@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
+  - Turn
+  - Police
   - Wall
   - Weapon
-  - Enemy
   - Bullet
   layers:
   - Default
