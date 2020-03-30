@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Turn
-  - Wall
-  - Weapon
+  - Background
+  - Powerups
   - Bullet
+  - Enemy
+  - Weapon
+  - Wall
   layers:
   - Default
   - TransparentFX
