@@ -361,6 +361,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3214042118895312656, guid: 86989f849614e938199bfca68b392711,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3214042118895312657, guid: 86989f849614e938199bfca68b392711,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -453,6 +458,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60951a0e6870a6b47a2e610651419b74, type: 3}
+--- !u!1001 &777604033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3600607}
+    m_Modifications:
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562304, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562306, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_Name
+      value: SurgicalKnife
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562306, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562306, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562307, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 786197147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211353768136562307, guid: 6be0b91efb729c1f3bcd8beb023e5463,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6be0b91efb729c1f3bcd8beb023e5463, type: 3}
 --- !u!1001 &1350693115
 PrefabInstance:
   m_ObjectHideFlags: 0

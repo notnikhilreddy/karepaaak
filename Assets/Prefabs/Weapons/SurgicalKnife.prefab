@@ -127,8 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 1
   bulletSpeed: 0
-  fireRate: 1
+  fireDelay: 1
   bulletsPerFire: 1
   damagePerFire: 2
-  bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
+  visualRange: 0
+  bulletObject: {fileID: 1587053059901507639, guid: 81cb090b76d7e7028a9f2dafd7e95f5f,
     type: 3}
