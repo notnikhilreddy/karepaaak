@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public bool Human, Moving, Attacking;
+    public bool isMoving, isAttacking;
     public float leftPoint, rightPoint, speed;
     private float vel;
     private Rigidbody2D rb;

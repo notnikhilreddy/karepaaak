@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d5bdc8c5efc5a7db51474b4e6dd866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: Melee
+  weaponType: 1
   bulletSpeed: 0
-  damage: 2
+  fireRate: 1
+  bulletsPerFire: 1
+  damagePerFire: 2
   bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
     type: 3}
