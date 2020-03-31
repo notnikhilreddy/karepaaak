@@ -16,6 +16,7 @@ public class WeaponController : MonoBehaviour
     public bool simultaneously;
     public float bulletSpreadingAngle, timeBetweenBullets, damagePerFire, visualRange;
     public GameObject bulletObject;
+    public LineRenderer aimingLaser;
     
     private GameObject parentObject;
     private string weaponOwner;
@@ -45,12 +46,17 @@ public class WeaponController : MonoBehaviour
     }
 
     private IEnumerator Gun() {
-        float lastFireTime = 0f;
+        Vector2 firePoint = transform.GetChild(0).position;
         if(weaponOwner.Equals("Player")) {
+            float lastFireTime = 0f;
             while(true) {
                 if(Input.mousePresent) { //CHANGE LATER
                     pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
                     pointDirection = pointDirection.normalized;
+
+                    // RaycastHit2D hitInfo = Physics2D.Raycast(firePoint, pointDirection, visualRange);
+                    // aimingLaser.SetPosition(0, firePoint);
+                    // aimingLaser.SetPosition(1, firePoint + pointDirection * visualRange);
 
                     float angle = Mathf.Atan2(pointDirection.y, pointDirection.x) * Mathf.Rad2Deg;
 
@@ -63,7 +69,8 @@ public class WeaponController : MonoBehaviour
                     }
 
                     if(Input.GetMouseButtonDown(0)) {
-                        Vector2 firePoint = transform.GetChild(0).position;
+                        firePoint = transform.GetChild(0).position;
+
                         pointDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parentObject.transform.position;
                         pointDirection = pointDirection.normalized;
                         
@@ -99,24 +106,11 @@ public class WeaponController : MonoBehaviour
             }
         } else if(weaponOwner.Equals("Enemy")) {
             while(true) {
+                
 
                 yield return null;
             }
         }
-    }
-
-    private void fire(Vector2 firePoint, Vector2 pointDirection) { //ADD MULTIPLE BULLETS
-        GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
-        newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
-        newBullet.GetComponent<BulletController>().damage = damagePerFire / bulletsPerFire;
-        newBullet.GetComponent<Rigidbody2D>().velocity = pointDirection * bulletSpeed;
-
-        // for(float i = -1.5f; i <= 1.5f; i += n) {
-        //     GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation);
-        //     newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
-        //     newBullet.GetComponent<BulletController>().damage = damagePerFire / bulletsPerFire;
-        //     newBullet.GetComponent<Rigidbody2D>().velocity = pointDirection * bulletSpeed;
-        // }
     }
 
     private IEnumerator Melee() {
@@ -127,7 +121,7 @@ public class WeaponController : MonoBehaviour
                     
                     GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation, transform);
                     newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
-                    newBullet.GetComponent<BulletController>().damage = damagePerFire / bulletsPerFire;
+                    newBullet.GetComponent<BulletController>().damage = damagePerFire;
 
                     float time = Time.time;
                     while(Time.time - time <= 0.2) {
