@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: Melee
+  bulletSpeed: 0
+  damage: 2
   bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
     type: 3}
-  bulletSpeed: 20
-  damage: 0

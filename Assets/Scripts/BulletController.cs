@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public string shotBy;
+    public float damage;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,13 @@ public class BulletController : MonoBehaviour
         string otherTag = other.gameObject.tag;
         if(shotBy.Equals("Player") && !otherTag.Equals("Player")) {
             if(otherTag.Equals("Enemy")) {
-                Destroy(other.gameObject);
+                other.GetComponent<EnemyHealth>().addDamage(damage);
             }
             Destroy(gameObject);
         }
         if(shotBy.Equals("Enemy") && !otherTag.Equals("Enemy")) {
             if(otherTag.Equals("Player")) {
-                // reduce player health
-                // if player health <= 0
-                    // GAME OVER
-                    Destroy(other.gameObject);
+                // other.GetComponent<PlayerHealth>().takeDamage(damage);
             }
             Destroy(gameObject);
         }

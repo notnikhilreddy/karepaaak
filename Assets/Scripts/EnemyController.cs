@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         float pos = transform.position.x;
-        Debug.Log(pos);
+        // Debug.Log(pos);
         if(pos <= leftPoint) {
             vel = speed;
             transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
