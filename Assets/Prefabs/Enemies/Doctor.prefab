@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 778300160837754141}
   - component: {fileID: 1430506770308331845}
   - component: {fileID: 8589846433368051167}
+  - component: {fileID: -6239064739846888022}
   m_Layer: 9
   m_Name: Doctor
   m_TagString: Enemy
@@ -132,7 +133,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
-  m_Material: {fileID: 6200000, guid: 82fd3921cd561f561b9a3c4ab1501f97, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -152,6 +153,19 @@ MonoBehaviour:
   Human: 0
   Moving: 0
   Attacking: 0
-  movePoints:
-  - 0
-  - 0
+  leftPoint: 0
+  rightPoint: 0
+  speed: 0
+--- !u!114 &-6239064739846888022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549804889237818055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83ddaf597f44464eb3765727b385f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 10

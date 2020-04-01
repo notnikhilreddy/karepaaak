@@ -16,13 +16,12 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0) makeDead();
     }
 
     public void addDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0) makeDead();
     }
 
     void makeDead()

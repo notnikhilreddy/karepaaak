@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
             if(!Input.mousePresent) // CHANGE LATER
                 if(direction > 0)
-                    transform.localScale = playerScale;
+                    transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
                 else
-                    transform.localScale = new Vector2(-playerScale.x, playerScale.y);
+                    transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
 
             rb.velocity = new Vector2(playerSpeed * Input.GetAxis("horizontal"), rb.velocity.y);
         }
