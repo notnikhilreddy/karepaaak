@@ -199,16 +199,25 @@ public class WeaponController : MonoBehaviour
             }
         } else if(weaponOwner.Equals("Enemy")) {
             Vector2 raycastDirection;
-            RaycastHit2D hitInfo;
+            // RaycastHit2D hitInfo, hit;
             float lastFireTime = Time.time;
             
             while(true) {
                 bool playerSpotted = false;
 
+                RaycastHit2D hitInfo, hit;
+
                 raycastDirection = parentTransform.right * parentTransform.localScale.x;
                 raycastDirection = raycastDirection.normalized;
                 
-                hitInfo = Physics2D.Raycast(transform.position, raycastDirection, visualRange, ~1 << LayerMask.NameToLayer("Enemies"));
+                hitInfo = Physics2D.Raycast(transform.position, raycastDirection, 0, ~1 << LayerMask.NameToLayer("Enemies"));
+                for(float angle = visualAngle/2f; angle >= -visualAngle/2f; angle -= visualAngle/(visualRange*2)) {
+                    hit = Physics2D.Raycast(transform.position, Quaternion.Euler(0f, 0f, angle) * raycastDirection, visualRange, ~1 << LayerMask.NameToLayer("Enemies"));
+                    
+                    if(hit && hit.collider.tag.Equals("Player")) {
+                        hitInfo = hit;
+                    }
+                }
                 
                 if(hitInfo && hitInfo.collider.tag.Equals("Player")) {
                     playerSpotted = true;
@@ -228,32 +237,26 @@ public class WeaponController : MonoBehaviour
                         runVelocity = new Vector2(-parentObject.GetComponent<EnemyController>().speed, parentObject.GetComponent<Rigidbody2D>().velocity.y);
                     }
                     
-                    // parentObject.GetComponent<Rigidbody2D>().velocity = runVelocity;
-
-                    while(hitInfo && hitInfo.distance > 1f) {
-                        parentObject.GetComponent<Rigidbody2D>().velocity = runVelocity;
-                        hitInfo = Physics2D.Raycast(transform.position, raycastDirection, visualRange, ~1 << LayerMask.NameToLayer("Enemies"));
-                        yield return null;
-                    }
-                    parentObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
+                    parentObject.GetComponent<Rigidbody2D>().velocity = runVelocity;
                     
-                    
-                    if(Time.time - lastFireTime >= fireDelay) {
-                        
-                        firePoint = transform.GetChild(0).position;
-                        GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation, transform);
-                        newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
-                        newBullet.GetComponent<BulletController>().damage = damagePerFire;
+                    if(hitInfo.distance <= 1.5f) {
+                        parentObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        if(Time.time - lastFireTime >= fireDelay) {
+                            
+                            firePoint = transform.GetChild(0).position;
+                            GameObject newBullet = Instantiate(bulletObject, firePoint, transform.rotation, transform);
+                            newBullet.GetComponent<BulletController>().shotBy = parentObject.tag;
+                            newBullet.GetComponent<BulletController>().damage = damagePerFire;
 
-                        lastFireTime = Time.time;
+                            lastFireTime = Time.time;
 
-                        float time = Time.time;
-                        while(Time.time - time <= 0.5f) {
-                            yield return null;
+                            float time = Time.time;
+                            while(Time.time - time <= 0.5f) {
+                                yield return null;
+                            }
+
+                            Destroy(newBullet);
                         }
-
-                        Destroy(newBullet);
                     }
                 }
 
