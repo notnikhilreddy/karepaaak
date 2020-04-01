@@ -129,7 +129,12 @@ MonoBehaviour:
   bulletSpeed: 0
   fireDelay: 1
   bulletsPerFire: 1
+  simultaneously: 0
+  bulletSpreadingAngle: 0
+  timeBetweenBullets: 0
   damagePerFire: 2
-  visualRange: 0
+  visualRange: 10
+  visualAngle: 90
   bulletObject: {fileID: 1587053059901507639, guid: 81cb090b76d7e7028a9f2dafd7e95f5f,
     type: 3}
+  aimingLaser: {fileID: 0}

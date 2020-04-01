@@ -33,6 +33,8 @@ public class EnemyController : MonoBehaviour
                 transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
             }
             rb.velocity = new Vector2(vel, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 }
