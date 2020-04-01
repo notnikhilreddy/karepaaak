@@ -133,7 +133,8 @@ MonoBehaviour:
   bulletSpreadingAngle: 5
   timeBetweenBullets: 0.1
   damagePerFire: 5
-  visualRange: 5
+  visualRange: 10
+  visualAngle: 90
   bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
     type: 3}
   aimingLaser: {fileID: 4302549302462958009, guid: 773d76d9aacba0be98207de11a8624ab,
