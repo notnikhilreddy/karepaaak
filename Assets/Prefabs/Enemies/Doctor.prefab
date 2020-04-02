@@ -167,3 +167,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 10
+  enemySlider: {fileID: 1620806171797424869, guid: edb76f36ae56b3745af1d36d686bdadf,
+    type: 3}

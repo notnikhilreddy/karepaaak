@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29.2, y: -12}
+  m_AnchoredPosition: {x: 37, y: -15}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2386571
@@ -530,7 +530,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1c261728455ac164993c783b14a15c07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07c1d8a7798fd66649a114543b5200ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -569,7 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4017abbc89c204ca466e98c4785812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMoving: 1
   isAttacking: 0
   leftPoint: 5
   rightPoint: 5
@@ -587,7 +586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 20
-  enemySlider: {fileID: 973630352}
 --- !u!1 &559997540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,18 +1053,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1620806171092279669}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &973630352 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1620806171797424869, guid: edb76f36ae56b3745af1d36d686bdadf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1620806171092279669}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &974316811
 GameObject:
   m_ObjectHideFlags: 0

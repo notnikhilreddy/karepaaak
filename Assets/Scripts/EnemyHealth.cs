@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public float enemyMaxHealth;
     public Slider enemySlider;
-    float currentHealth;
+    private Rigidbody2D rb;
+    private float currentHealth;
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         currentHealth = enemyMaxHealth;
+        enemySlider.gameObject.SetActive(false);
         enemySlider.maxValue = currentHealth;
         enemySlider.value = currentHealth;
     }
@@ -24,8 +27,14 @@ public class EnemyHealth : MonoBehaviour
 
     public void addDamage(float damage)
     {
+        if(rb.velocity.x >= 0f) {
+            enemySlider.SetDirection(Slider.Direction.LeftToRight, false);
+        } else {
+            enemySlider.SetDirection(Slider.Direction.RightToLeft, false);
+        }
         enemySlider.gameObject.SetActive(true);
         currentHealth -= damage;
+        enemySlider.value = currentHealth;
     }
 
     void makeDead()
