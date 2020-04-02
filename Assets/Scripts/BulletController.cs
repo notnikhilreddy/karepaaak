@@ -34,4 +34,8 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnBecameInvisible() {
+        Destroy(gameObject);
+    }
 }
