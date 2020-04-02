@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float enemyMaxHealth;
-    public Slider enemySlider;
+    public float fullHealth;
+    public Slider healthSlider;
     float currentHealth;
+    // Start is called before the first frame update
     void Start()
     {
-        currentHealth = enemyMaxHealth;
-        enemySlider.maxValue = currentHealth;
-        enemySlider.value = currentHealth;
+        currentHealth = fullHealth;
+        healthSlider.maxValue = currentHealth;
+        healthSlider.value = currentHealth;
     }
 
     // Update is called once per frame
@@ -24,12 +24,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void addDamage(float damage)
     {
-        enemySlider.gameObject.SetActive(true);
+        if (damage <= 0) return;
         currentHealth -= damage;
-        enemySlider.value = currentHealth;
+        healthSlider.value = currentHealth;
         if (currentHealth <= 0) makeDead();
     }
-
     void makeDead()
     {
         Destroy(gameObject);
