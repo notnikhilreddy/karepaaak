@@ -29,7 +29,7 @@ public class BulletController : MonoBehaviour
         }
         if(shotBy.Equals("Enemy") && !otherTag.Equals("Enemy")) {
             if(otherTag.Equals("Player")) {
-                // other.GetComponent<PlayerHealth>().takeDamage(damage);
+                other.GetComponent<PlayerHealth>().addDamage(damage);
             }
             Destroy(gameObject);
         }
