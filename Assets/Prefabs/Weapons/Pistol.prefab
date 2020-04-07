@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3214042118895312654}
   - component: {fileID: 3214042118895312657}
-  - component: {fileID: -6382604250978220640}
+  - component: {fileID: 4520868586515674308}
   m_Layer: 10
   m_Name: Pistol
   m_TagString: Weapon
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6382604250978220640
+--- !u!114 &4520868586515674308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3214042118895312656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d5bdc8c5efc5a7db51474b4e6dd866, type: 3}
+  m_Script: {fileID: 11500000, guid: 463ba329c00f8b6e795fc245bf1c10bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
   bulletSpeed: 20
   fireDelay: 0.5
   bulletsPerFire: 2
@@ -137,5 +136,4 @@ MonoBehaviour:
   visualAngle: 90
   bulletObject: {fileID: 2702268369009768694, guid: 437de0e40fe63725a85fb4077ff18011,
     type: 3}
-  aimingLaser: {fileID: 4302549302462958009, guid: 773d76d9aacba0be98207de11a8624ab,
-    type: 3}
+  aimingLaser: {fileID: 0}

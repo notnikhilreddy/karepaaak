@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5211353768136562304}
   - component: {fileID: 5211353768136562307}
-  - component: {fileID: 4477880382806881854}
+  - component: {fileID: -2286110727532804430}
   m_Layer: 10
   m_Name: SurgicalKnife
   m_TagString: Weapon
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4477880382806881854
+--- !u!114 &-2286110727532804430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,19 +122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5211353768136562306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d5bdc8c5efc5a7db51474b4e6dd866, type: 3}
+  m_Script: {fileID: 11500000, guid: 2de80d7767e9d105a8b31b7b0d82bf6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
-  bulletSpeed: 0
   fireDelay: 1
-  bulletsPerFire: 1
-  simultaneously: 0
-  bulletSpreadingAngle: 0
-  timeBetweenBullets: 0
   damagePerFire: 2
   visualRange: 10
   visualAngle: 90
   bulletObject: {fileID: 1587053059901507639, guid: 81cb090b76d7e7028a9f2dafd7e95f5f,
     type: 3}
-  aimingLaser: {fileID: 0}
