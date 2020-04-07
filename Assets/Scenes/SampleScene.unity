@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a41619d2509974ba8563234c03cd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1360904376}
   smoothing: 5
 --- !u!20 &519420031
 Camera:
